@@ -9,6 +9,10 @@ class User < ApplicationRecord
 
   validate :password_validation
 
+  has_many :sessions, dependent: :destroy
+
+  has_many :tweets, dependent: :destroy
+
   private
 
   def password_validation
