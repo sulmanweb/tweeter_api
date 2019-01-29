@@ -8,7 +8,7 @@ class TweetsController < ApplicationController
   # GET /tweets
   # GET /tweets.json
   def index
-    @tweets = Tweet.all
+    @tweets = Tweet.all.order(id: :desc)
     success_tweet_index
   end
 
